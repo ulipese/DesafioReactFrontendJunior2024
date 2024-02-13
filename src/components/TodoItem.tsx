@@ -4,22 +4,22 @@ import { Item } from '../types/ItemsType';
 export default function TodoItem(props: any) {
   const [isOver, setIsOver] = useState(false);
   const [isDone, setIsDone] = useState(props.isDone || false);
+  const { checkAll } = props;
 
   const handleClick = (event: any) => {
     const { todos, setTodos } = props;
     const { id } = event.target;
 
     if (!event.target.className.includes('todoItem__delete')) {
-      
       const newTodoList = todos.map((item: Item) => {
         if (item.id === id) {
           item.isDone = !item.isDone;
+          setIsDone(item.isDone);
         }
         return item;
       });
-      
+
       setTodos(newTodoList);
-      setIsDone(!isDone);
       return;
     }
     if (event.target.className.includes('todoItem__delete')) {
@@ -30,7 +30,7 @@ export default function TodoItem(props: any) {
       setTodos(newTodoList);
     }
   };
-  const handleDoubleClick = async (event: any) => {
+  const handleDoubleClick = (event: any) => {
     if (!event.target.className.includes('edit')) {
       const title = event.target.textContent;
       const id = props.id;
@@ -56,6 +56,32 @@ export default function TodoItem(props: any) {
   useEffect(() => {
     setIsDone(isDone);
   }, [isDone, props.todos]);
+  
+  useEffect(() => {
+    if (checkAll) {
+      const newTodoList = props.todos.map((item: Item) => {
+        item.isDone = true;
+        setIsDone(item.isDone);
+
+        return item;
+      });
+
+      props.setTodos(newTodoList);
+      return;
+    }
+    if (!checkAll) {
+      const newTodoList = props.todos.map((item: Item) => {
+        item.isDone = false;
+        setIsDone(item.isDone);
+
+        return item;
+      });
+
+      props.setTodos(newTodoList);
+      return;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkAll]);
 
   return (
     <section

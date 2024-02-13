@@ -1,37 +1,31 @@
-import { useEffect, useState } from 'react';
-import { Item } from '../types/ItemsType';
+import { useEffect } from 'react';
 
 export default function Input(props: any) {
-  const { editTodo, setTodos, todos } = props;
-  const [isActive, setActive] = useState(false);
+  const { editTodo, setTodos, todos, setCheckAll, checkAll } = props;
 
-  const handleClick = async (event: any) => {
-    if (
-      event.target.className === 'input-box__icon' &&
-      isActive === true &&
-      todos.length > 0
-    ) {
-      const didTodos = todos.map((item: Item) => {
-        item.isDone = true;
-        return item;
-      });
-      setTodos(didTodos);
-      setActive(false);
+  const handleClick = (event: any) => {
+    if (event.target.className === 'input-box__icon') {
+      // const didTodos = todos.map((item: Item) => {
+      //   item.isDone = true;
+      //   return item;
+      // });
+      // setTodos(didTodos);
+      setCheckAll(!checkAll);
       return;
     }
-    if (
-      event.target.className === 'input-box__icon' &&
-      isActive === false &&
-      todos.length > 0
-    ) {
-      const notDidTodos = todos.map((item: Item) => {
-        item.isDone = false;
-        return item;
-      });
-      setTodos(notDidTodos);
-      setActive(true);
-      return;
-    }
+    // if (
+    //   event.target.className === 'input-box__icon' &&
+    //   checkAll === false &&
+    //   todos.length > 0
+    // ) {
+    //   const notDidTodos = todos.map((item: Item) => {
+    //     item.isDone = false;
+    //     return item;
+    //   });
+    //   setTodos(notDidTodos);
+    //   setCheckAll(true);
+    //   return;
+    // }
   };
   const handleKey = (event: any) => {
     if (event.keyCode === 13 && event.target.value !== '') {
