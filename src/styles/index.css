@@ -1,0 +1,170 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+}
+html,
+body {
+  width: 100%;
+  height: auto;
+  background: #fafafa;
+  color: #353535;
+  padding-bottom: 3em;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__title {
+  font-size: 5em;
+  font-weight: 300;
+  color: #b43a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3em 0em;
+}
+.inputArea {
+  width: 30em;
+  background-color: #fff;
+  min-height: 3em;
+  height: auto;
+  outline: 1px solid #efefef;
+}
+.input-box {
+  width: 100%;
+  height: 3em;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5em;
+  outline: 1px solid #efefef;
+}
+.input-box__input {
+  width: 92%;
+  height: 2em;
+  padding-left: 1em;
+  font-size: 1.5em;
+  color: #303030;
+  border: none;
+  outline: none;
+}
+.input-box__input::placeholder {
+  color: #bdbdbd;
+  font-weight: 300;
+  font-style: italic;
+}
+.input-box__icon {
+  width: 4%;
+  height: 3em;
+  cursor: pointer;
+}
+.inputArea__todoItems.active {
+  width: 100%;
+  height: auto;
+  padding: 1em 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.todoItem {
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+  color: #303030;
+  font-size: 1.4em;
+  padding-left: 0.3em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  display: flex;
+  gap: 0.8em;
+  transition: 300ms;
+  position: relative;
+}
+.todoItem.didItem {
+  text-decoration: line-through;
+  color: #bdbdbd;
+}
+.todoItem__checkbox {
+  width: 1.3em;
+  height: 1.3em;
+  border: 1px solid #bdbdbd;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.todoItem__text {
+  pointer-events: visible;
+  cursor: default;
+  height: auto;
+  width: 80%;
+}
+.todoItem__text.edit {
+  pointer-events: none;
+}
+.checkbox__icon {
+  width: 0.8em;
+}
+.todoItem__delete {
+  position: absolute;
+  right: 1em;
+  width: 2em;
+  padding: 0.65em;
+  top: 0.1em;
+  display: none;
+  z-index: 1000;
+  cursor: pointer;
+}
+.todoItem__delete.active {
+  display: block;
+}
+.inputArea__moreFuncs {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  outline: 1px solid #efefef;
+  padding: 1em;
+  font-size: 1em;
+}
+.moreFuncs__itemsCounter {
+  cursor: default;
+  color: #303030;
+}
+.moreFuncs__filters {
+  display: flex;
+  flex-direction: row;
+  width: 5em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.filters__link {
+  text-decoration: none;
+  color: #303030;
+  padding: 0.3em;
+}
+.filters__link:hover {
+  outline: 1px solid #efefef;
+}
+.filters__link.active {
+  outline: 1px solid #dfdfdf;
+}
+.moreFuncs__clear {
+  cursor: pointer;
+  color: #303030;
+}
