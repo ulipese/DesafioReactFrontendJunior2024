@@ -3,14 +3,14 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 
 ## Table of contents
 - [Overview](#overview)
-  - [Demo](#demo)
   - [Design](#design) 
 - [Como rodar](#como-rodar)
 - [Autor da resolução do teste](#author)
 
 ## Overview
 ### Design
-  [See the design here!](https://www.figma.com/file/U66UhE1pqy1MJ26vB0MGnp/DebugApp-Keeper?type=design&node-id=0%3A1&t=Ovsh6a7Ugcqtyc9J-1) 
+   ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/07391c27-2adc-4704-b725-762dbc3805c2)
+
   
 ### Como rodar
 1. Clone o projeto, baixando os arquivos ou dando um ```git clone``` com a url do projeto (https://github.com/ulipese/DesafioReactFrontendJunior2024.git);
