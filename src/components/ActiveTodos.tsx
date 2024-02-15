@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/index.css';
 import InputArea from './InputArea';
 import { useLocation } from 'react-router-dom';
+import Footer from './Footer';
 
 export default function ActiveTodos() {
   const location = useLocation();
@@ -18,6 +19,7 @@ export default function ActiveTodos() {
     <main className="main">
       <h1 className="main__title">todos</h1>
       <InputArea todos={todos} setTodos={setTodos} filter="active" />
+      <Footer />
     </main>
   );
 }

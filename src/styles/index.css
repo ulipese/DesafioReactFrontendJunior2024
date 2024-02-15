@@ -33,12 +33,28 @@ body {
   justify-content: center;
   padding: 0.3em 0em;
 }
+.container__inputArea {
+  width: 32em;
+  min-height: 5em;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  padding-bottom: 2em;
+  border-radius: 2em;
+}
 .inputArea {
   width: 30em;
   background-color: #fff;
   min-height: 3em;
   height: auto;
   outline: 1px solid #efefef;
+  position: relative;
+  z-index: 5;
+  margin-top: -2em;
 }
 .input-box {
   width: 100%;
@@ -115,8 +131,20 @@ body {
 .todoItem__text.edit {
   pointer-events: none;
 }
+.checkbox__button {
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .checkbox__icon {
-  width: 0.8em;
+  width: 65%;
 }
 .todoItem__delete {
   position: absolute;
@@ -167,4 +195,87 @@ body {
 .moreFuncs__clear {
   cursor: pointer;
   color: #303030;
+  text-decoration: none;
+  visibility: hidden;
+}
+.moreFuncs__clear.active {
+  visibility: visible;
+}
+.inputArea__paper {
+  width: 99%;
+  height: 0.3em;
+  background-color: #f5f5f5;
+  outline: 1px solid #dfdfdf;
+  position: absolute;
+  bottom: -0.4em;
+  left: 0.2em;
+  z-index: -1;
+}
+.inputArea__paper.two {
+  width: 97%;
+  bottom: -0.65em;
+  left: 0.5em;
+  z-index: -2;
+}
+.main__footer {
+  margin-top: 1.5em;
+  color: #bdbdbd;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  word-spacing: 0.1em;
+  font-size: 0.7em;
+}
+.footer__credits {
+  width: 13em;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 0.8em;
+}
+.credits__strong {
+  color: #303030;
+}
+
+@media screen and (max-width: 660px) {
+  :root {
+    font-size: 13px;
+  }
+  .moreFuncs {
+    font-size: 0.6em;
+  }
+  .moreFuncs__itemsCounter {
+    width: 4em;
+    height: 2.5em;
+    text-align: center;
+    margin-top: -0.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+  .container__inputArea {
+    width: 29em;
+  }
+  .inputArea {
+    width: 27em;
+  }
+  .moreFuncs {
+    font-size: 0.4em;
+  }
+  .moreFuncs__itemsCounter {
+    width: 4em;
+    height: 2.5em;
+    text-align: center;
+    margin-top: -0.5em;
+  }
+  .todoItem__text {
+    width: 75%;
+  }
 }

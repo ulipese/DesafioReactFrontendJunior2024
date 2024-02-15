@@ -15,7 +15,7 @@ export default function InputArea(props: any) {
   const [checkAll, setCheckAll] = useState('');
 
   const handleClick = (event: any) => {
-    if (event.target.className === 'moreFuncs__clear') {
+    if (event.target.className.includes('moreFuncs__clear')) {
       const notDidTodos = props.todos.filter((item: Item) => {
         return item.isDone === false;
       });
@@ -31,41 +31,23 @@ export default function InputArea(props: any) {
   const pathName = window.location.pathname;
 
   return (
+        <section className="container__inputArea">
     <section className="inputArea">
-      <Input
-        setTodos={props.setTodos}
-        todos={props.todos}
-        editTodo={editTodo}
-        setEditTodo={setEditTodo}
-        setCheckAll={setCheckAll}
-        checkAll={checkAll}
-      />
-      <div
-        className={
-          'inputArea__todoItems ' + (props.todos.length !== 0 ? 'active' : '')
-        }
-      >
-        {props.filter !== 'completed' && props.filter !== 'active'
-          ? props.todos.map((item: Item) => {
-              return (
-                <TodoItem
-                  key={JSON.stringify(item.id)}
-                  id={item.id}
-                  text={item.title}
-                  isDone={item.isDone}
-                  todos={props.todos}
-                  setTodos={props.setTodos}
-                  editTodo={editTodo}
-                  setEditTodo={setEditTodo}
-                  itemsLeft={itemsLeft}
-                  checkAll={checkAll}
-                />
-              );
-            })
-          : props.filter === 'active'
-          ? props.todos
-              .filter((todo: Item) => todo.isDone === false)
-              .map((item: Item) => {
+        <Input
+          setTodos={props.setTodos}
+          todos={props.todos}
+          editTodo={editTodo}
+          setEditTodo={setEditTodo}
+          setCheckAll={setCheckAll}
+          checkAll={checkAll}
+        />
+        <div
+          className={
+            'inputArea__todoItems ' + (props.todos.length !== 0 ? 'active' : '')
+          }
+        >
+          {props.filter !== 'completed' && props.filter !== 'active'
+            ? props.todos.map((item: Item) => {
                 return (
                   <TodoItem
                     key={JSON.stringify(item.id)}
@@ -78,69 +60,103 @@ export default function InputArea(props: any) {
                     setEditTodo={setEditTodo}
                     itemsLeft={itemsLeft}
                     checkAll={checkAll}
+                    setCheckAll={setCheckAll}
                   />
                 );
               })
-          : props.todos
-              .filter((todo: Item) => todo.isDone === true)
-              .map((item: Item) => {
-                return (
-                  <TodoItem
-                    key={JSON.stringify(item.id)}
-                    id={item.id}
-                    text={item.title}
-                    isDone={item.isDone}
-                    todos={props.todos}
-                    setTodos={props.setTodos}
-                    editTodo={editTodo}
-                    setEditTodo={setEditTodo}
-                    itemsLeft={itemsLeft}
-                    checkAll={checkAll}
-                  />
-                );
-              })}
-      </div>
-      <div className="inputArea__moreFuncs">
-        <p className="moreFuncs__itemsCounter">
-          {itemsLeft + ' '}
-          items left
-        </p>
-        <div className="moreFuncs__filters">
-          <Link
+            : props.filter === 'active'
+            ? props.todos
+                .filter((todo: Item) => todo.isDone === false)
+                .map((item: Item) => {
+                  return (
+                    <TodoItem
+                      key={JSON.stringify(item.id)}
+                      id={item.id}
+                      text={item.title}
+                      isDone={item.isDone}
+                      todos={props.todos}
+                      setTodos={props.setTodos}
+                      editTodo={editTodo}
+                      setEditTodo={setEditTodo}
+                      itemsLeft={itemsLeft}
+                      checkAll={checkAll}
+                      setCheckAll={setCheckAll}
+                    />
+                  );
+                })
+            : props.todos
+                .filter((todo: Item) => todo.isDone === true)
+                .map((item: Item) => {
+                  return (
+                    <TodoItem
+                      key={JSON.stringify(item.id)}
+                      id={item.id}
+                      text={item.title}
+                      isDone={item.isDone}
+                      todos={props.todos}
+                      setTodos={props.setTodos}
+                      editTodo={editTodo}
+                      setEditTodo={setEditTodo}
+                      itemsLeft={itemsLeft}
+                      checkAll={checkAll}
+                      setCheckAll={setCheckAll}
+                    />
+                  );
+                })}
+        </div>
+        <div className="inputArea__moreFuncs">
+          <p className="moreFuncs__itemsCounter">
+            {itemsLeft + ' '}
+            items left
+          </p>
+          <div className="moreFuncs__filters">
+            <Link
+              className={
+                'filters__link ' +
+                (pathName !== '/active' && pathName !== '/completed'
+                  ? 'active'
+                  : '')
+              }
+              to="/"
+              state={{ passedTodos: props.todos }}
+            >
+              All
+            </Link>
+            <Link
+              className={
+                'filters__link ' + (pathName === '/active' ? 'active' : '')
+              }
+              to="/active"
+              state={{ passedTodos: props.todos }}
+            >
+              Active
+            </Link>
+            <Link
+              className={
+                'filters__link ' + (pathName === '/completed' ? 'active' : '')
+              }
+              to="/completed"
+              state={{ passedTodos: props.todos }}
+            >
+              Completed
+            </Link>
+          </div>
+          <a
+            href="#"
             className={
-              'filters__link ' +
-              (pathName !== '/active' && pathName !== '/completed'
+              'moreFuncs__clear ' +
+              (props.todos.find((todo: Item) => todo.isDone === true)
                 ? 'active'
                 : '')
             }
-            to="/"
-            state={{ passedTodos: props.todos }}
+            onClick={handleClick}
           >
-            All
-          </Link>
-          <Link
-            className={
-              'filters__link ' + (pathName === '/active' ? 'active' : '')
-            }
-            to="/active"
-            state={{ passedTodos: props.todos }}
-          >
-            Active
-          </Link>
-          <Link
-            className={
-              'filters__link ' + (pathName === '/completed' ? 'active' : '')
-            }
-            to="/completed"
-            state={{ passedTodos: props.todos }}
-          >
-            Completed
-          </Link>
+            Clear Completed
+          </a>
         </div>
-        <a href="#" className="moreFuncs__clear" onClick={handleClick}>
-          Clear Completed
-        </a>
-      </div>
+        <div className="inputArea__paper one"></div>
+        <div className="inputArea__paper two"></div>
+      </section>
     </section>
   );
 }

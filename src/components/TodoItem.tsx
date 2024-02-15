@@ -4,13 +4,13 @@ import { Item } from '../types/ItemsType';
 export default function TodoItem(props: any) {
   const [isOver, setIsOver] = useState(false);
   const [isDone, setIsDone] = useState(props.isDone || false);
-  const { checkAll } = props;
+  const { checkAll, setCheckAll } = props;
 
   const handleClick = (event: any) => {
     const { todos, setTodos } = props;
     const { id } = event.target;
 
-    if (!event.target.className.includes('todoItem__delete')) {
+    if (event.target.className.includes('checkbox')) {
       const newTodoList = todos.map((item: Item) => {
         if (item.id === id) {
           item.isDone = !item.isDone;
@@ -69,16 +69,7 @@ export default function TodoItem(props: any) {
       });
 
       props.setTodos(newTodoList);
-      return;
-    }
-    if (!checkAll) {
-      const newTodoList = props.todos.map((item: Item) => {
-        item.isDone = false;
-        setIsDone(item.isDone);
-        return item;
-      });
-
-      props.setTodos(newTodoList);
+      setCheckAll('');
       return;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -93,11 +84,15 @@ export default function TodoItem(props: any) {
     >
       <div className="todoItem__checkbox" onClick={handleClick} id={props.id}>
         {isDone ? (
-          <img
-            src="/images/checked-icon.svg"
-            alt="checkbox icon"
-            className="checkbox__icon"
-          />
+          <button className="checkbox__button" onClick={handleClick}>
+            <img
+              src="/images/checked-icon.svg"
+              alt="checkbox icon"
+              className="checkbox__icon"
+              id={props.id}
+              onClick={handleClick}
+            />
+          </button>
         ) : (
           ''
         )}
