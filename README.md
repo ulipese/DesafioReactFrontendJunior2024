@@ -1,50 +1,27 @@
 # Teste front-end enContact
+Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento front-end na enContact.
 
-Bem-vindo ao teste para desenvolvimento front-end na enContact.
+## Table of contents
+- [Overview](#overview)
+  - [Demo](#demo)
+  - [Design](#design) 
+- [Como rodar](#como-rodar)
+- [Autor da resolução do teste](#author)
 
-## O teste
+## Overview
+### Design
+  [See the design here!](https://www.figma.com/file/U66UhE1pqy1MJ26vB0MGnp/DebugApp-Keeper?type=design&node-id=0%3A1&t=Ovsh6a7Ugcqtyc9J-1) 
+  
+### Como rodar
+1. Clone o projeto, baixando os arquivos ou dando um ```git clone``` com a url do projeto (https://github.com/ulipese/DesafioReactFrontendJunior2024.git);
+2. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (/), instale as dependências com ```npm install```;
+3. Após instalar as dependências, já é possível rodar a aplicação com um ```npm start```, divirta-se!
 
-Para testar suas habilidades em TypeScript e folhas de estilos, nos baseamos no projeto [Todo MVC](https://todomvc.com).
+### Rotas
+1. / - Home (All), mostra todas as tasks / tarefas;
+2. /active - Ativos, mostra todas as tasks / tarefas ativas;
+3. /completed - Completas, mostra todas as tarefas completas.
 
-![Todo MVC](data/todos.png "Todo MVC")
-
-Neste teste você poderá mostrar suas habilidades em gerência de estados, listas utilizando `map`, `filter`, `find`, `reduce`, API, css, entre outros.
-
-O foco deste teste é a implementação de uma lista de tarefas, onde você deve listar, criar, mudar o título, mudar o estado para concluído ou não, e remover uma tarefa, além das informações de quantas tarefas ainda estão pendentes, filtrar as ativas, completas, e poder limpar as tarefas completas (removendo da lista).
-
-## O repositório
-
-1. Faça o fork do nosso repositório no Github.
-2. Clone do projeto.
-3. Instale as dependências do projeto (utilizando o `yarn` ou `npm install`).
-4. No arquivo `src/app.tsx` você irá encontrar o esqueleto dessa aplicação, este é seu ponto de partida.
-5. Utilize `yarn start` ou `npm start` para inicializar a aplicação.
-
-## O que fazer?
-
-1. Recupere as tarefas iniciais via GET da URL [http://my-json-server.typicode.com/EnkiGroup/DesafioReactEncontact2021/todos](http://my-json-server.typicode.com/EnkiGroup/DesafioReactEncontact2021/todos).
-2. No [projeto Todo MVC](https://todomvc.com) é disponibilizada uma interface estilizada de lista de tarefas. Para testar suas habilidades com estilos, gostaríamos que você repita exatamente o mesmo estilo da imagem abaixo.
-3. Adicione uma tarefa na lista;
-   - Para adicionar, escrever o título da tarefa e pressionar Enter para registrar.
-   - Apresentar a tarefa criada no início da lista.
-   - A tarefa deve ser marcada como "não concluída" ao ser registrada.
-4. Liste as tarefas.
-5. Posso marcar ou desmarcar uma tarefa como concluída.
-6. Ao passar o mouse em cima de uma tarefa podemos ver um ícone de remoção, ao clicar deve-se remover a tarefa.
-7. Ao clicar duas vezes em um item, deve apresentar o modo de edição de uma tarefa.
-8. Ao clicar na seta (ao lado do campo de criação de tarefas no protótipo), posso marcar todas as tarefas como concluídas.
-9. Logo abaixo da lista temos algumas informações no protótipo;
-   - Canto inferior esquerdo: quantidade de **itens restantes** (não marcados como concluído).
-   - Canto inferior direito: botão para limpar (remover) os itens já concluídos com contador.
-   - Filtros "Todos", "Ativos" e "Completos", ao clicar deve filtrar a lista e marcar o botão como ativo. (Obs.: Utilize a URL para os filtros `react-router-dom`).
-     - Todos: Mostra ativos e completos.
-     - Ativos: Mostra apenas os ativos.
-     - Completos: Mostra apenas os completos.
-
-<img src="data/todos.gif" alt="Comportamento da lista de tarefas" width="750">
-
-## Desafio do desafio
-
-Tem um tempinho a mais? Acha que pode fazer mais? Então aqui vai alguns desafios para seu projeto, que serve como um plus no seu teste!
-
-- E se essa aplicação tiver testes?
+## Author
+- Linkedin - [Felipe Sousa](https://www.linkedin.com/in/ulipese)
+- Github - [Felipe Sousa](https://www.github.com/ulipese)
