@@ -15,8 +15,7 @@ export default function AllTodos(props: any) {
     if (!passedTodos) {
       setTodos(props.initialTodos);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [props.initialTodos]);
 
   useEffect(() => {
     if (passedTodos) {
