@@ -5,27 +5,9 @@ export default function Input(props: any) {
 
   const handleClick = (event: any) => {
     if (event.target.className === 'input-box__icon') {
-      // const didTodos = todos.map((item: Item) => {
-      //   item.isDone = true;
-      //   return item;
-      // });
-      // setTodos(didTodos);
       setCheckAll(!checkAll);
       return;
     }
-    // if (
-    //   event.target.className === 'input-box__icon' &&
-    //   checkAll === false &&
-    //   todos.length > 0
-    // ) {
-    //   const notDidTodos = todos.map((item: Item) => {
-    //     item.isDone = false;
-    //     return item;
-    //   });
-    //   setTodos(notDidTodos);
-    //   setCheckAll(true);
-    //   return;
-    // }
   };
   const handleKey = (event: any) => {
     if (event.keyCode === 13 && event.target.value !== '') {

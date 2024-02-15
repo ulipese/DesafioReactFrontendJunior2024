@@ -56,13 +56,15 @@ export default function TodoItem(props: any) {
   useEffect(() => {
     setIsDone(isDone);
   }, [isDone, props.todos]);
-  
+
   useEffect(() => {
+    if (checkAll === '') {
+      return;
+    }
     if (checkAll) {
       const newTodoList = props.todos.map((item: Item) => {
         item.isDone = true;
         setIsDone(item.isDone);
-
         return item;
       });
 
@@ -73,7 +75,6 @@ export default function TodoItem(props: any) {
       const newTodoList = props.todos.map((item: Item) => {
         item.isDone = false;
         setIsDone(item.isDone);
-
         return item;
       });
 

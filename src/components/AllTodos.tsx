@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/index.css';
 import InputArea from './InputArea';
-import getItems from '../api';
-import { GetItemsResponse } from '../types/ItemsType';
+import { useLocation } from 'react-router-dom';
 
-export default function AllTodos() {
-  const [todos, setTodos] = useState<any>([]);
+export default function AllTodos(props: any) {
+  const location = useLocation();
+  const { passedTodos } = location.state || false;
+  const [todos, setTodos] = useState<any | null>(props.initialTodos);
 
   useEffect(() => {
-    const callingInitialItems = async () => {
-      const items: GetItemsResponse | string = await getItems();
-      setTodos(items);
-    };
-    callingInitialItems();
-  }, []); //empty to render just one time
+    if (!passedTodos) {
+      setTodos(props.initialTodos);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (passedTodos) {
+      setTodos(passedTodos);
+      return;
+    }
+  }, [passedTodos]);
 
   return (
     <main className="main">
       <h1 className="main__title">todos</h1>
-      <InputArea todos={todos} setTodos={setTodos} filter="allTodos"/>
+      <InputArea todos={todos} setTodos={setTodos} filter="all" />
     </main>
   );
 }
