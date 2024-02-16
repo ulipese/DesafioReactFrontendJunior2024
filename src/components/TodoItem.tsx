@@ -6,11 +6,12 @@ export default function TodoItem(props: any) {
   const [isDone, setIsDone] = useState(props.isDone || false);
   const { checkAll, setCheckAll } = props;
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.SyntheticEvent<EventTarget>): void => {
+    const target = event.target as HTMLElement;
     const { todos, setTodos } = props;
-    const { id } = event.target;
+    const { id } = target;
 
-    if (event.target.className.includes('checkbox')) {
+    if (target.className.includes('checkbox')) {
       const newTodoList = todos.map((item: Item) => {
         if (item.id === id) {
           item.isDone = !item.isDone;
@@ -22,7 +23,7 @@ export default function TodoItem(props: any) {
       setTodos(newTodoList);
       return;
     }
-    if (event.target.className.includes('todoItem__delete')) {
+    if (target.className.includes('todoItem__delete')) {
       const newTodoList = todos.filter((item: Item) => {
         return item.id !== id;
       });
@@ -30,9 +31,13 @@ export default function TodoItem(props: any) {
       setTodos(newTodoList);
     }
   };
-  const handleDoubleClick = (event: any) => {
-    if (!event.target.className.includes('edit')) {
-      const title = event.target.textContent;
+  const handleDoubleClick = (
+    event: React.SyntheticEvent<EventTarget>
+  ): void => {
+    const target = event.target as HTMLElement;
+
+    if (!target.className.includes('edit')) {
+      const title = target.textContent;
       const id = props.id;
       const editTodo = { id: id, title: title, isDone: isDone };
 
@@ -44,7 +49,7 @@ export default function TodoItem(props: any) {
       props.setTodos(notEditingTodos);
     }
   };
-  const handleMouse = (event: any) => {
+  const handleMouse = (event: React.SyntheticEvent): void => {
     if (event.nativeEvent.type === 'mouseover') {
       setIsOver(true);
     }

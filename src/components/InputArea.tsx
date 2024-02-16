@@ -4,8 +4,9 @@ import { Item } from '../types/ItemsType';
 import Input from './Input';
 import TodoItem from './TodoItem';
 import { Link } from 'react-router-dom';
+import InputAreaProps from '../types/InputAreaProps';
 
-export default function InputArea(props: any) {
+export default function InputArea(props: InputAreaProps) {
   const [editTodo, setEditTodo] = useState({
     id: '',
     title: '',
@@ -14,8 +15,9 @@ export default function InputArea(props: any) {
   const [itemsLeft, setItemsLeft] = useState(0);
   const [checkAll, setCheckAll] = useState('');
 
-  const handleClick = (event: any) => {
-    if (event.target.className.includes('moreFuncs__clear')) {
+  const handleClick = (event: React.SyntheticEvent<EventTarget>): void => {
+    const target = event.target as HTMLElement;
+    if (target.className.includes('moreFuncs__clear')) {
       const notDidTodos = props.todos.filter((item: Item) => {
         return item.isDone === false;
       });
@@ -31,8 +33,8 @@ export default function InputArea(props: any) {
   const pathName = window.location.pathname;
 
   return (
-        <section className="container__inputArea">
-    <section className="inputArea">
+    <section className="container__inputArea">
+      <section className="inputArea">
         <Input
           setTodos={props.setTodos}
           todos={props.todos}

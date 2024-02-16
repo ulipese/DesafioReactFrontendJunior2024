@@ -1,16 +1,21 @@
-import { useEffect } from 'react';
+import { SyntheticEvent, useEffect } from 'react';
+import InputProps from '../types/InputProps';
 
-export default function Input(props: any) {
+export default function Input(props: InputProps) {
   const { editTodo, setTodos, todos, setCheckAll, checkAll } = props;
 
-  const handleClick = (event: any) => {
-    if (event.target.className === 'input-box__icon') {
+  const handleClick = (event: React.SyntheticEvent<EventTarget>): void => {
+    const target = event.target as HTMLElement;
+
+    if (target.className === 'input-box__icon') {
       setCheckAll(!checkAll);
       return;
     }
   };
-  const handleKey = (event: any) => {
-    if (event.keyCode === 13 && event.target.value !== '') {
+  const handleKey = (event: SyntheticEvent<EventTarget> | any): void => {
+    const target = event.target as HTMLFormElement;
+
+    if (event.keyCode === 13 && target.value !== '') {
       setTodos([
         {
           id: Math.random().toString(16).slice(2),
