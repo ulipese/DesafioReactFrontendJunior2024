@@ -4,6 +4,7 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 ## Sumário
 - [Overview](#overview)
   - [Design](#design)
+  - [Demo](#demo)
 - [Pré-requisitos](#pré-requisitos)
 - [Primeiros passos](#primeiros-passos)
   - [Como testar](#como-testar)
@@ -14,6 +15,8 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 ### Design
    ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/07391c27-2adc-4704-b725-762dbc3805c2)
    
+### Design
+   ![Veja uma demonstração do site hospedado](https://teste-enki-group.netlify.app/)
 ## Pré-requisitos
 1. ⚠️Editor de código, e um terminal integrado (ou use junto de algum terminal à parte), para melhor visualização e edição do código geral, além da execução dos comandos;
 2. ⚠️É necessário ter o NPM, Node Package Manager, v8.3.1 (versão mínima recomendada) instalado para instalação de dependências e uso sem erros. Caso não tenha, pode [instale por aqui](https://nodejs.org/en), (a instalação do NPM ocorre junto com o NodeJS); 
