@@ -1,14 +1,14 @@
 # Teste front-end enContact
 Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento front-end na enContact.
 
-## Table of contents
+## Sumário
 - [Overview](#overview)
   - [Design](#design)
 - [Pré-requisitos](#pré-requisitos)
 - [Primeiros passos](#primeiros-passos)
   - [Como testar](#como-testar)
   - [Como rodar](#como-rodar)
-- [Autor da resolução do teste](#author)
+- [Autor da resolução do teste](#autor)
 
 ## Overview
 ### Design
@@ -32,10 +32,10 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 1. Após instalar as dependências como dito nos primeiros passos, e tenha testado a aplicação (não é obrigatório, mas é recomendado), já é possível rodar a aplicação com um ```npm start```, divirta-se!
 
 ### Rotas
-1. / - Home (All), mostra todas as tasks / tarefas;
-2. /active - Ativos, mostra todas as tasks / tarefas ativas;
-3. /completed - Completas, mostra todas as tarefas completas.
+1. / - Home (All), mostra todas as tasks/tarefas;
+2. /active - Ativos, mostra todas as tasks/tarefas ativas;
+3. /completed - Completas, mostra todas as tasks/tarefas completas.
 
-## Author
+## Autor
 - Linkedin - [Felipe Sousa](https://www.linkedin.com/in/ulipese)
 - Github - [Felipe Sousa](https://www.github.com/ulipese)
