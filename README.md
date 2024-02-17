@@ -11,7 +11,7 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 
 ## Overview
 ### Design
-   ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/07391c27-2adc-4704-b725-762dbc3805c2)
+   ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/07391c27-2adc-4704-b725-762dbc3805c2){: .callout}
 
 ## Primeiros passos
 1. Clone o projeto, baixando os arquivos ou dando um ```git clone``` com a url do projeto (https://github.com/ulipese/DesafioReactFrontendJunior2024.git);
@@ -34,3 +34,5 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 ## Author
 - Linkedin - [Felipe Sousa](https://www.linkedin.com/in/ulipese)
 - Github - [Felipe Sousa](https://www.github.com/ulipese)
+
+<style>.callout {width: 100px;}</style>
