@@ -4,7 +4,7 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 ## Table of contents
 - [Overview](#overview)
   - [Design](#design)
-- [Pré-requisitos](#pre-requisitos)
+- [Pré-requisitos](#pré-requisitos)
 - [Primeiros passos](#primeiros-passos)
   - [Como testar](#como-testar)
   - [Como rodar](#como-rodar)
