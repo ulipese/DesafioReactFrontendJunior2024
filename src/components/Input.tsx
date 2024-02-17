@@ -62,7 +62,7 @@ export default function Input(props: InputProps) {
         type="text"
         className="input-box__input"
         placeholder="What needs to be done?"
-        onKeyDown={handleKey}
+        onKeyDown={props.onKeyDown || handleKey}
       />
     </section>
   );

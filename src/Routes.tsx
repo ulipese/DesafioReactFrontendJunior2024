@@ -3,7 +3,7 @@ import AllTodos from './components/AllTodos';
 import CompletedTodos from './components/CompletedTodos';
 import ActiveTodos from './components/ActiveTodos';
 import getItems from './api';
-import { GetItemsResponse, Item } from './types/ItemsType';
+import { GetItemsResponse } from './types/ItemsType';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function AppRoutes() {
@@ -12,7 +12,7 @@ export default function AppRoutes() {
   useEffect(() => {
     const callingInitialItems = async () => {
       const items: GetItemsResponse | any = await getItems();
-      setInitialTodos(items.map((item: Item) => item));
+      setInitialTodos(items);
     };
 
     if (initialTodos.length === 0) {

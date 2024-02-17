@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Item } from '../types/ItemsType';
+import TodoItemProps from '../types/todoItemProps';
 
-export default function TodoItem(props: any) {
+export default function TodoItem(props: TodoItemProps) {
   const [isOver, setIsOver] = useState(false);
   const [isDone, setIsDone] = useState(props.isDone || false);
   const { checkAll, setCheckAll } = props;
@@ -39,7 +40,7 @@ export default function TodoItem(props: any) {
     if (!target.className.includes('edit')) {
       const title = target.textContent;
       const id = props.id;
-      const editTodo = { id: id, title: title, isDone: isDone };
+      const editTodo = { id: id, title: title || '', isDone: isDone };
 
       props.setEditTodo(editTodo);
 
@@ -87,7 +88,13 @@ export default function TodoItem(props: any) {
       onMouseLeave={handleMouse}
       id={props.id}
     >
-      <div className="todoItem__checkbox" onClick={handleClick} id={props.id}>
+      <div
+        className="todoItem__checkbox"
+        onClick={handleClick}
+        id={props.id}
+        // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+        role="checkbox"
+      >
         {isDone ? (
           <button className="checkbox__button" onClick={handleClick}>
             <img
@@ -103,9 +110,9 @@ export default function TodoItem(props: any) {
         )}
       </div>
       <p className="todoItem__text" onDoubleClick={handleDoubleClick}>
-        {props.text.length >= 100
-          ? props.text.substring(0, 97) + '...'
-          : props.text}
+        {props.title.length >= 100
+          ? props.title.substring(0, 97) + '...'
+          : props.title}
       </p>
       <img
         src="/images/delete-icon.svg"

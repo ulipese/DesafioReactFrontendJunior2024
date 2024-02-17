@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="main__footer">
       <p className="footer__edit">Double-click to edit a todo</p>
-      <p className="footer__credits">
+      <div className="footer__credits">
         <p className="credits__credit">
           Template by <span className="credits__strong">Sindre Sorhus</span>
         </p>
@@ -16,7 +16,7 @@ export default function Footer() {
         <p className="credits__credit">
           Part of <span className="credits__strong">TodoMVC</span>
         </p>
-      </p>
+      </div>
     </footer>
   );
 }

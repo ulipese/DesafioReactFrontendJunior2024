@@ -44,5 +44,9 @@
   },
   "devDependencies": {
     "nock": "^13.1.1"
+  },
+  "jest": {
+    "transformIgnorePatterns": ["node_modules\/(?!axios)"]
   }
+  
 }

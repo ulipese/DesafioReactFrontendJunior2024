@@ -42,6 +42,7 @@ export default function InputArea(props: InputAreaProps) {
           setEditTodo={setEditTodo}
           setCheckAll={setCheckAll}
           checkAll={checkAll}
+          onKeyDown={undefined}
         />
         <div
           className={
@@ -54,7 +55,7 @@ export default function InputArea(props: InputAreaProps) {
                   <TodoItem
                     key={JSON.stringify(item.id)}
                     id={item.id}
-                    text={item.title}
+                    title={item.title}
                     isDone={item.isDone}
                     todos={props.todos}
                     setTodos={props.setTodos}
@@ -74,7 +75,7 @@ export default function InputArea(props: InputAreaProps) {
                     <TodoItem
                       key={JSON.stringify(item.id)}
                       id={item.id}
-                      text={item.title}
+                      title={item.title}
                       isDone={item.isDone}
                       todos={props.todos}
                       setTodos={props.setTodos}
@@ -93,7 +94,7 @@ export default function InputArea(props: InputAreaProps) {
                     <TodoItem
                       key={JSON.stringify(item.id)}
                       id={item.id}
-                      text={item.title}
+                      title={item.title}
                       isDone={item.isDone}
                       todos={props.todos}
                       setTodos={props.setTodos}

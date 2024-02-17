@@ -8,4 +8,5 @@ export default interface InputProps {
   todos: React.ComponentState;
   setCheckAll: Dispatch<SetStateAction<string | boolean>> | any;
   checkAll: boolean | string;
+  onKeyDown: any;
 }
