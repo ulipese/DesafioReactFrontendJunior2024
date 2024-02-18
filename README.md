@@ -24,21 +24,30 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 2. ⚠️É necessário ter o NPM, Node Package Manager, v8.3.1 (versão mínima recomendada) instalado para instalação de dependências e uso sem erros. Caso não tenha, pode [instale por aqui](https://nodejs.org/en), (a instalação do NPM ocorre junto com o NodeJS); 
 
 ## Primeiros passos
-1. Clone o projeto, baixando os arquivos ou dando: 
+1. Clone o projeto, baixando os arquivos ou clonando o repo com: 
 ```
 git clone https://github.com/ulipese/DesafioReactFrontendJunior2024.git
 ``` 
-com a url do projeto ;
-3. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (_"/"_), instale as dependências com ```npm clean-install``` (para uma instalação mais limpa e direta. sem cache);
-4. Com as dependências instaladas, siga os seguintes passos adiante para testar e/ou rodar a aplicação!
+2. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (_"/"_), instale as dependências com: (para instalação limpa sem cache)
+```
+npm clean-install
+```
+3. Com as dependências instaladas, siga os seguintes passos adiante para testar e/ou rodar a aplicação!
    
 ### Como testar
-1. Após os primeiros passos citados anteriormente, basta acessar o terminal no diretório root da aplicação (_"/"_) e inserir o comando ```npm run test```;
+1. Após os primeiros passos citados anteriormente, basta acessar o terminal no diretório root da aplicação (_"/"_) e inserir o comando: 
+```
+npm run test
+```
 2. Caso tudo ocorra bem, assim como deve ser caso tenha feito o clone e instalação de dependências corretamente, você irá receber as mensagens de sucesso do teste, veja um exemplo real abaixo: ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/6be758f2-ffd0-45f1-8f4d-04d587921a07)
 Obs: os testes vão desde renderização correta dos componentes, até o correto funcionamento de algumas funcionalidades da aplicação.
   
 ### Como rodar
-1. Após instalar as dependências como dito nos primeiros passos, e tenha testado a aplicação (não é obrigatório, mas é recomendado), já é possível rodar a aplicação com um ```npm start```, divirta-se!
+1. Após instalar as dependências como dito nos primeiros passos, e tenha testado a aplicação (não é obrigatório, mas é recomendado), já é possível rodar a aplicação com um 
+```
+npm start
+```
+2. Espere abrir localmente, e já estará pronto pra uso!
 
 ### Documentação dos Componentes
 1. Para uma visão geral sobre os componentes, suas funções e seus testes, escrevi docs específicos para cada um, que podem ser encontrado no diretório: (_"/src/docs"_);
