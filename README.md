@@ -25,10 +25,12 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 
 ## Primeiros passos
 1. Clone o projeto, baixando os arquivos ou dando: 
-```git clone https://github.com/ulipese/DesafioReactFrontendJunior2024.git``` 
+```
+git clone https://github.com/ulipese/DesafioReactFrontendJunior2024.git
+``` 
 com a url do projeto ;
-2. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (_"/"_), instale as dependências com ```npm clean-install``` (para uma instalação mais limpa e direta. sem cache);
-3. Com as dependências instaladas, siga os seguintes passos adiante para testar e/ou rodar a aplicação!
+3. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (_"/"_), instale as dependências com ```npm clean-install``` (para uma instalação mais limpa e direta. sem cache);
+4. Com as dependências instaladas, siga os seguintes passos adiante para testar e/ou rodar a aplicação!
    
 ### Como testar
 1. Após os primeiros passos citados anteriormente, basta acessar o terminal no diretório root da aplicação (_"/"_) e inserir o comando ```npm run test```;
