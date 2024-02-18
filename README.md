@@ -24,7 +24,9 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
 2. ⚠️É necessário ter o NPM, Node Package Manager, v8.3.1 (versão mínima recomendada) instalado para instalação de dependências e uso sem erros. Caso não tenha, pode [instale por aqui](https://nodejs.org/en), (a instalação do NPM ocorre junto com o NodeJS); 
 
 ## Primeiros passos
-1. Clone o projeto, baixando os arquivos ou dando um ```git clone``` com a url do projeto (https://github.com/ulipese/DesafioReactFrontendJunior2024.git);
+1. Clone o projeto, baixando os arquivos ou dando: 
+```git clone https://github.com/ulipese/DesafioReactFrontendJunior2024.git``` 
+com a url do projeto ;
 2. Após baixar o projeto, abra-o com seu editor de código favorito (como VS Code), e na raiz do projeto (_"/"_), instale as dependências com ```npm clean-install``` (para uma instalação mais limpa e direta. sem cache);
 3. Com as dependências instaladas, siga os seguintes passos adiante para testar e/ou rodar a aplicação!
    
