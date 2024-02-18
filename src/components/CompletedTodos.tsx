@@ -8,13 +8,13 @@ import { Item } from '../types/ItemsType';
 export default function CompletedTodos() {
   const location = useLocation();
   const { passedTodos } = location.state || false;
-  const [todos, setTodos] = useState<any | null>(passedTodos || []);
+  const [todos, setTodos] = useState(passedTodos || []); // get todos from others lists of filter
 
   useEffect(() => {
     if (passedTodos) {
       setTodos(passedTodos);
     }
-  }, [passedTodos]);
+  }, [passedTodos]); // get the passedTodos and ensure that will be set
 
   return (
     <main className="main">

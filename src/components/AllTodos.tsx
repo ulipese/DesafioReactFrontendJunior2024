@@ -8,24 +8,17 @@ import { Item } from '../types/ItemsType';
 
 export default function AllTodos(props: AllTodosProps) {
   const location = useLocation();
-  const { passedTodos } = location.state || false;
+  const { passedTodos } = location.state || false; // get todos from others lists of filter
   const [todos, setTodos] = useState(
-    passedTodos ? passedTodos : props.initialTodos
+    passedTodos ? passedTodos : props.initialTodos // get initial todos from api, if don't have other todos
   );
-
-  useEffect(() => {
-    if (!passedTodos) {
-      setTodos(props.initialTodos);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.initialTodos]);
 
   useEffect(() => {
     if (passedTodos) {
       setTodos(passedTodos);
       return;
     }
-  }, [passedTodos]);
+  }, [passedTodos]); // ensures that initial todos will be set
 
   return (
     <main className="main">

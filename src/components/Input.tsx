@@ -4,6 +4,7 @@ import InputProps from '../types/InputProps';
 export default function Input(props: InputProps) {
   const { editTodo, setTodos, todos, setCheckAll, checkAll } = props;
 
+  // check all todos as done if clicked
   const handleClick = (event: React.SyntheticEvent<EventTarget>): void => {
     const target = event.target as HTMLElement;
 
@@ -12,6 +13,7 @@ export default function Input(props: InputProps) {
       return;
     }
   };
+  // save todo when enter be clicked
   const handleKey = (event: SyntheticEvent<EventTarget> | any): void => {
     const target = event.target as HTMLFormElement;
 
@@ -29,6 +31,7 @@ export default function Input(props: InputProps) {
     }
   };
 
+  // save editions if other todo set to be edited
   useEffect(() => {
     const input: HTMLInputElement | any = document.querySelector('input');
 

@@ -15,6 +15,7 @@ export default function InputArea(props: InputAreaProps) {
   const [itemsLeft, setItemsLeft] = useState(0);
   const [checkAll, setCheckAll] = useState('');
 
+  // clean did todo items when clicked
   const handleClick = (event: React.SyntheticEvent<EventTarget>): void => {
     const target = event.target as HTMLElement;
     if (target.className.includes('moreFuncs__clear')) {
@@ -26,6 +27,7 @@ export default function InputArea(props: InputAreaProps) {
     }
   };
 
+  // see items left ever todos state change
   useEffect(() => {
     setItemsLeft(props.todos.filter((todo: Item) => !todo.isDone).length);
   }, [props.todos]);
@@ -49,7 +51,7 @@ export default function InputArea(props: InputAreaProps) {
             'inputArea__todoItems ' + (props.todos.length !== 0 ? 'active' : '')
           }
         >
-          {props.filter !== 'completed' && props.filter !== 'active'
+          {props.filter !== 'completed' && props.filter !== 'active' // show filter 'All todos'
             ? props.todos.map((item: Item) => {
                 return (
                   <TodoItem
@@ -67,7 +69,7 @@ export default function InputArea(props: InputAreaProps) {
                   />
                 );
               })
-            : props.filter === 'active'
+            : props.filter === 'active' // show filter 'Active todos'
             ? props.todos
                 .filter((todo: Item) => todo.isDone === false)
                 .map((item: Item) => {
@@ -87,7 +89,7 @@ export default function InputArea(props: InputAreaProps) {
                     />
                   );
                 })
-            : props.todos
+            : props.todos // show filter 'Completed todos'
                 .filter((todo: Item) => todo.isDone === true)
                 .map((item: Item) => {
                   return (

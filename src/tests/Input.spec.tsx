@@ -1,8 +1,8 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import Input from '../Input';
+import Input from '../components/Input';
 import { SetStateAction } from 'react';
-import { Item } from '../../types/ItemsType';
+import { Item } from './../types/ItemsType';
 
 describe('Input', () => {
   test('Should create a todo item when enter clicked', () => {
@@ -21,7 +21,7 @@ describe('Input', () => {
             throw new Error('Function not implemented.');
           }}
           todos={[]}
-          setCheckAll={[]}
+          setCheckAll={''}
           checkAll={''}
           onKeyDown={mockEnterNewInput} // mockEnterNewInput simulates the useState enter trigger
         />

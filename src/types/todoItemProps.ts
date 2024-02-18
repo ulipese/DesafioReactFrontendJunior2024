@@ -6,9 +6,9 @@ export default interface TodoItemProps {
   title: string;
   isDone: boolean;
   editTodo: Item;
-  setTodos: Dispatch<SetStateAction<Item>>;
   setEditTodo: Dispatch<SetStateAction<Item>>;
-  todos: React.ComponentState;
+  setTodos: Dispatch<SetStateAction<Array<Item>>>;
+  todos: Array<Item>;
   setCheckAll: Dispatch<SetStateAction<string | boolean>> | any;
   checkAll: boolean | string;
   itemsLeft: number;

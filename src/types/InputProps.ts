@@ -3,10 +3,10 @@ import { Item } from './ItemsType';
 
 export default interface InputProps {
   editTodo: Item;
-  setTodos: Dispatch<SetStateAction<Item>> | any;
   setEditTodo: Dispatch<SetStateAction<Item>>;
-  todos: React.ComponentState;
+  setTodos: Dispatch<SetStateAction<Array<Item>>>;
+  todos: Array<Item>;
   setCheckAll: Dispatch<SetStateAction<string | boolean>> | any;
   checkAll: boolean | string;
-  onKeyDown: any;
+  onKeyDown: Function | any;
 }

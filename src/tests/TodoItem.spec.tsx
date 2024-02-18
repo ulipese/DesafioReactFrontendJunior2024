@@ -1,8 +1,8 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import TodoItem from '../TodoItem';
+import TodoItem from '../components/TodoItem';
 import { SetStateAction } from 'react';
-import { Item } from '../../types/ItemsType';
+import { Item } from './../types/ItemsType';
 
 describe('Input', () => {
   test('Should marks a todo item as did', () => {
@@ -28,7 +28,7 @@ describe('Input', () => {
             { id: 'Tw-I9', title: 'Cortar a grama', isDone: true },
             { id: '7f2sf', title: 'Comprar pão', isDone: false },
           ]}
-          setCheckAll={undefined}
+          setCheckAll={''}
           checkAll={''}
           itemsLeft={0}
         />

@@ -43,7 +43,8 @@
     ]
   },
   "devDependencies": {
-    "nock": "^13.1.1"
+    "nock": "^13.1.1",
+    "@babel/plugin-proposal-private-property-in-object": "true"
   },
   "jest": {
     "transformIgnorePatterns": [

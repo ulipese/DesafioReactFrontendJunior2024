@@ -12,6 +12,7 @@ export default function TodoItem(props: TodoItemProps) {
     const { todos, setTodos } = props;
     const { id } = target;
 
+    // mark a todo item as did or not did
     if (target.className.includes('checkbox')) {
       const newTodoList = todos.map((item: Item) => {
         if (item.id === id) {
@@ -25,6 +26,7 @@ export default function TodoItem(props: TodoItemProps) {
       return;
     }
     if (target.className.includes('todoItem__delete')) {
+      // delete the todo item
       const newTodoList = todos.filter((item: Item) => {
         return item.id !== id;
       });
@@ -32,6 +34,7 @@ export default function TodoItem(props: TodoItemProps) {
       setTodos(newTodoList);
     }
   };
+  // set todo item to edit to Iinput
   const handleDoubleClick = (
     event: React.SyntheticEvent<EventTarget>
   ): void => {
@@ -50,6 +53,7 @@ export default function TodoItem(props: TodoItemProps) {
       props.setTodos(notEditingTodos);
     }
   };
+  // tells if mouse is over, to show the item delete option
   const handleMouse = (event: React.SyntheticEvent): void => {
     if (event.nativeEvent.type === 'mouseover') {
       setIsOver(true);
@@ -59,10 +63,12 @@ export default function TodoItem(props: TodoItemProps) {
     }
   };
 
+  // ensures that type is changed when todos list change
   useEffect(() => {
     setIsDone(isDone);
   }, [isDone, props.todos]);
 
+  // ensures that all todos item will be marked as did when state 'checkAll' change
   useEffect(() => {
     if (checkAll === '') {
       return;

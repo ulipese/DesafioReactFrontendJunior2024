@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ActiveTodos from '../ActiveTodos';
+import ActiveTodos from '../components/ActiveTodos';
 
 describe('ActiveTodos', () => {
   test('Should render correctly', async () => {
