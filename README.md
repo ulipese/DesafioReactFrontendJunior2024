@@ -10,6 +10,7 @@ Teste realizado por mim (Felipe Sousa de Oliveira) para vaga de desenvolvimento 
   - [Como testar](#como-testar)
   - [Como rodar](#como-rodar)
   - [Documentação dos Componentes](#documentação-dos-componentes)
+  - [Um pouco sobre as rotas (filtros)](#rotas)
 - [Autor da resolução do teste](#autor)
 
 ## Overview
