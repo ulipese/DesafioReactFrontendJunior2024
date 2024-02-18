@@ -39,11 +39,12 @@ npm clean-install
 ```
 npm run test
 ```
-2. Caso tudo ocorra bem, assim como deve ser caso tenha feito o clone e instalação de dependências corretamente, você irá receber as mensagens de sucesso do teste, veja um exemplo real abaixo: ![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/6be758f2-ffd0-45f1-8f4d-04d587921a07)
+2. Caso tudo ocorra bem, assim como deve ser caso tenha feito o clone e instalação de dependências corretamente, você irá receber as mensagens de sucesso do teste, veja um exemplo real abaixo: 
+![image](https://github.com/ulipese/DesafioReactFrontendJunior2024/assets/70922407/6be758f2-ffd0-45f1-8f4d-04d587921a07)
 Obs: os testes vão desde renderização correta dos componentes, até o correto funcionamento de algumas funcionalidades da aplicação.
   
 ### Como rodar
-1. Após instalar as dependências como dito nos primeiros passos, e tenha testado a aplicação (não é obrigatório, mas é recomendado), já é possível rodar a aplicação com um 
+1. Após instalar as dependências como dito nos primeiros passos, e tenha testado a aplicação (não é obrigatório, mas é recomendado), já é possível rodar a aplicação com o comando:
 ```
 npm start
 ```
